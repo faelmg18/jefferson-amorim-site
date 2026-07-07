@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Cursor glow (desktop pointer only)
   const glow = document.getElementById('cursorGlow');
