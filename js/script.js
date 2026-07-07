@@ -44,16 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Cursor glow (desktop pointer only)
-  const glow = document.getElementById('cursorGlow');
-  if (window.matchMedia('(pointer: fine)').matches) {
-    document.addEventListener('mousemove', (e) => {
-      glow.style.opacity = '1';
-      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-    });
-    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-  }
-
   // Animated counters
   const counters = document.querySelectorAll('.stat-number');
   const animateCounter = (el) => {
