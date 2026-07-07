@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 <link rel="stylesheet" href="css/style.css">
@@ -32,6 +32,8 @@
 <div class="preloader" id="preloader">
   <svg class="preloader-mark"><use href="#ja-mark"/></svg>
 </div>
+
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <header class="header" id="header">
   <div class="container header-inner">
@@ -71,23 +73,22 @@
     </div>
 
     <div class="container hero-content">
-      <p class="eyebrow">OAB/ES 27.462 &nbsp;·&nbsp; Cariacica, ES</p>
-      <h1>
+      <p class="eyebrow" data-aos="fade-up">OAB/ES 27.462 &nbsp;·&nbsp; Cariacica, ES</p>
+      <h1 data-aos="fade-up" data-aos-delay="100">
         Advocacia séria,<br>
-        <span class="marked">estratégica</span> e humana.
+        <span class="highlight">estratégica</span> e humana.
       </h1>
-      <p class="hero-desc">
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
         Escritório especializado em Direito Civil, Previdenciário, Família, Criminal,
         Trabalhista, Administrativo e Empresarial. Atendimento próximo e transparente,
         do primeiro contato até a solução do seu caso.
       </p>
-      <div class="hero-actions">
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
         <a href="https://wa.me/5527998658243?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
           Falar agora no WhatsApp
         </a>
         <a href="#areas" class="btn btn-ghost btn-lg">Ver áreas de atuação</a>
       </div>
-      <p class="hero-tags">Civil — Previdenciário — Família — Criminal — Trabalhista — Administrativo — Empresarial</p>
     </div>
 
     <a href="#sobre-escritorio" class="scroll-cue" aria-label="Rolar para baixo">
@@ -95,10 +96,22 @@
     </a>
   </section>
 
+  <!-- FAIXA DE ÁREAS (marquee) -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Direito Civil</span><span>Direito Previdenciário</span><span>Direito de Família</span>
+      <span>Direito Criminal</span><span>Direito Trabalhista</span><span>Direito Administrativo</span>
+      <span>Direito Empresarial &amp; Condominial</span>
+      <span>Direito Civil</span><span>Direito Previdenciário</span><span>Direito de Família</span>
+      <span>Direito Criminal</span><span>Direito Trabalhista</span><span>Direito Administrativo</span>
+      <span>Direito Empresarial &amp; Condominial</span>
+    </div>
+  </div>
+
   <!-- SOBRE O ESCRITÓRIO -->
   <section class="section" id="sobre-escritorio">
     <div class="container split">
-      <div class="split-media" data-aos="fade-up">
+      <div class="split-media" data-aos="fade-right">
         <img src="assets/img/foto-escritorio-logo.jpeg" alt="Recepção do escritório Jefferson Amorim Advocacia, em Cariacica">
         <div class="split-media-badge">
           <strong>Desde 2017</strong>
@@ -107,15 +120,15 @@
       </div>
 
       <div class="split-text">
-        <p class="section-eyebrow">O escritório</p>
-        <h2>Sete anos de atuação <br>com foco em resultado.</h2>
-        <p>
+        <p class="section-eyebrow" data-aos="fade-up">O escritório</p>
+        <h2 data-aos="fade-up" data-aos-delay="100">Sete anos de atuação <br>com foco em resultado.</h2>
+        <p data-aos="fade-up" data-aos-delay="150">
           Fundado em 2017 e localizado em Cariacica, nas proximidades do Shopping Moxuara,
           o escritório <strong>Jefferson Amorim Advocacia</strong> nasceu com um compromisso simples:
           oferecer serviços jurídicos de alto nível técnico com um atendimento próximo,
           claro e humano — sem o distanciamento que costuma marcar a relação entre advogado e cliente.
         </p>
-        <p>
+        <p data-aos="fade-up" data-aos-delay="200">
           Hoje contamos com uma equipe multidisciplinar, incluindo estagiários de Direito
           devidamente inscritos na OAB, para acompanhar cada etapa do seu processo com agilidade
           diante dos prazos — mesmo diante da conhecida morosidade do Judiciário brasileiro.
@@ -142,52 +155,72 @@
   <!-- ÁREAS DE ATUAÇÃO -->
   <section class="section section-dark" id="areas">
     <div class="container">
-      <div class="section-head">
-        <p class="section-eyebrow">Especialidades</p>
-        <h2 class="section-title">Áreas de Atuação</h2>
-        <p class="section-lead">
-          Cada área é conduzida com estudo aprofundado da legislação e da jurisprudência
-          mais recente, incluindo as mudanças trazidas pela Emenda Constitucional 103/2023
-          no Direito Previdenciário.
-        </p>
-      </div>
+      <p class="section-eyebrow" data-aos="fade-up">Especialidades</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Áreas de Atuação</h2>
+      <p class="section-lead" data-aos="fade-up" data-aos-delay="150">
+        Cada área é conduzida com estudo aprofundado da legislação e da jurisprudência
+        mais recente, incluindo as mudanças trazidas pela Emenda Constitucional 103/2023
+        no Direito Previdenciário.
+      </p>
 
-      <div class="areas-list">
-        <article class="areas-row">
-          <span class="areas-num">01</span>
+      <div class="grid-areas">
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6Zm14 0l-3 6a3 3 0 0 0 6 0l-3-6ZM5 7h14M8 7l4-3 4 3M4 21h16"/></svg>
+          </div>
           <h3>Direito Civil</h3>
           <p>Contratos, indenizações, responsabilidade civil e demais questões patrimoniais.</p>
-        </article>
-        <article class="areas-row">
-          <span class="areas-num">02</span>
+        </div>
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
           <h3>Direito Previdenciário</h3>
           <p>Aposentadorias, benefícios do INSS e revisões, à luz da EC 103/2023.</p>
-        </article>
-        <article class="areas-row">
-          <span class="areas-num">03</span>
+        </div>
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.6 9 2 5.5 5.2 4.8 7.4 4.3 9.6 5.4 12 8c2.4-2.6 4.6-3.7 6.8-3.2C22 5.5 23.4 9 21.5 12.5 19 16.65 12 21 12 21Z"/></svg>
+          </div>
           <h3>Direito de Família</h3>
           <p>Divórcios, guarda de filhos, pensão alimentícia e partilha de bens.</p>
-        </article>
-        <article class="areas-row">
-          <span class="areas-num">04</span>
+        </div>
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m14 4 6 6-1.5 1.5-1-1L13 15l1 1-1.5 1.5-6-6L8 10l1 1 4.5-4.5-1-1L14 4Z"/><path d="M2 20h20"/></svg>
+          </div>
           <h3>Direito Criminal</h3>
           <p>Defesa técnica em crimes contra a pessoa, patrimônio e crimes financeiros.</p>
-        </article>
-        <article class="areas-row">
-          <span class="areas-num">05</span>
+        </div>
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+          </div>
           <h3>Direito Trabalhista</h3>
           <p>Defesa de empregados e empregadores em verbas rescisórias e passivos trabalhistas.</p>
-        </article>
-        <article class="areas-row">
-          <span class="areas-num">06</span>
+        </div>
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6M4 21h16"/></svg>
+          </div>
           <h3>Direito Administrativo</h3>
           <p>Reintegração de candidatos em concursos públicos e questões contra a administração.</p>
-        </article>
-        <article class="areas-row">
-          <span class="areas-num">07</span>
+        </div>
+
+        <div class="area-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="area-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+          </div>
           <h3>Empresarial &amp; Condominial</h3>
           <p>Cobranças, administração de condomínios e consultoria jurídica empresarial.</p>
-        </article>
+        </div>
+
       </div>
     </div>
   </section>
@@ -195,22 +228,22 @@
   <!-- SOBRE O ADVOGADO -->
   <section class="section" id="advogado">
     <div class="container split split-reverse">
-      <div class="split-media" data-aos="fade-up">
+      <div class="split-media" data-aos="fade-left">
         <img src="assets/img/foto-sobre.jpeg" alt="Dr. Jefferson Gonzaga Rodrigues Amorim em seu escritório">
       </div>
 
       <div class="split-text">
-        <p class="section-eyebrow">Quem conduz o seu caso</p>
-        <h2>Dr. Jefferson Gonzaga <br>Rodrigues Amorim</h2>
-        <p class="badge-oab">OAB/ES 27.462</p>
+        <p class="section-eyebrow" data-aos="fade-up">Quem conduz o seu caso</p>
+        <h2 data-aos="fade-up" data-aos-delay="100">Dr. Jefferson Gonzaga <br>Rodrigues Amorim</h2>
+        <p class="badge-oab" data-aos="fade-up" data-aos-delay="120">OAB/ES 27.462</p>
 
-        <p>
+        <p data-aos="fade-up" data-aos-delay="150">
           Graduado pela PIO XII, com pós-graduação em Direito Processual Civil pela FDV
           e pós-graduação em Direito Previdenciário pela Damásio. Atua diretamente em cada
           fase processual, com atenção especial à comunicação clara com o cliente.
         </p>
 
-        <div class="partner-card">
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
           <div class="partner-avatar">AC</div>
           <div>
             <strong>Dr.ª Andreia Carneiro Elbani</strong>
@@ -224,28 +257,38 @@
   <!-- DIFERENCIAIS -->
   <section class="section section-tint" id="diferenciais">
     <div class="container">
-      <div class="section-head">
-        <p class="section-eyebrow">Por que este escritório</p>
-        <h2 class="section-title">Diferenciais</h2>
-      </div>
+      <p class="section-eyebrow" data-aos="fade-up">Por que este escritório</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Diferenciais</h2>
 
-      <div class="diff-list">
-        <article class="diff-row">
+      <div class="grid-diff">
+        <div class="diff-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
           <h3>Agilidade nos prazos</h3>
           <p>Acompanhamento ativo de cada processo para reduzir o tempo de espera do cliente.</p>
-        </article>
-        <article class="diff-row">
+        </div>
+        <div class="diff-item" data-aos="fade-up" data-aos-delay="80">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.6 9 2 5.5 5.2 4.8 7.4 4.3 9.6 5.4 12 8c2.4-2.6 4.6-3.7 6.8-3.2C22 5.5 23.4 9 21.5 12.5 19 16.65 12 21 12 21Z"/></svg>
+          </div>
           <h3>Atendimento humanizado</h3>
           <p>Linguagem clara, escuta atenta e proximidade real com quem confia o caso a nós.</p>
-        </article>
-        <article class="diff-row">
+        </div>
+        <div class="diff-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z"/></svg>
+          </div>
           <h3>Ética e transparência</h3>
           <p>Orientação honesta sobre riscos e chances reais do processo, sem promessas vazias.</p>
-        </article>
-        <article class="diff-row">
+        </div>
+        <div class="diff-item" data-aos="fade-up" data-aos-delay="240">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v3h3M9 12h6M9 16h6M9 8h2"/></svg>
+          </div>
           <h3>Nota fiscal e CNPJ</h3>
           <p>Emissão de nota fiscal para pessoa física e jurídica, com total transparência.</p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -253,49 +296,73 @@
   <!-- AVALIAÇÕES -->
   <section class="section section-tint" id="avaliacoes">
     <div class="container">
-      <div class="section-head reviews-head">
-        <div>
-          <p class="section-eyebrow">Reputação</p>
-          <h2 class="section-title">O que dizem no Google</h2>
-          <p class="section-lead">
-            Avaliações reais de clientes, direto do perfil público do escritório no Google — sem edição.
-          </p>
+      <p class="section-eyebrow" data-aos="fade-up">Reputação</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">O que dizem no Google</h2>
+      <p class="section-lead" data-aos="fade-up" data-aos-delay="150">
+        Avaliações reais de clientes, direto do perfil público do escritório no Google —
+        sem edição.
+      </p>
+
+      <div class="review-summary" data-aos="fade-up" data-aos-delay="200">
+        <div class="review-summary-icon">
+          <svg viewBox="0 0 48 48" width="34" height="34"><path fill="#FFC107" d="M43.6 20.5H42V20.4H24v7.2h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.1-5.1C33.6 6.1 29 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5Z"/><path fill="#FF3D00" d="m6.3 14.7 5.9 4.3C13.8 15.4 18.5 12.4 24 12.4c3 0 5.8 1.1 7.9 3l5.1-5.1C33.6 6.1 29 4 24 4c-7.4 0-13.8 4.2-17.7 10.7Z"/><path fill="#4CAF50" d="M24 44c4.9 0 9.4-1.9 12.8-4.9l-5.9-5c-2 1.5-4.5 2.4-6.9 2.4-5.2 0-9.6-3.5-11.2-8.2l-5.9 4.5C10.1 39.7 16.5 44 24 44Z"/><path fill="#1976D2" d="M43.6 20.5H42V20.4H24v7.2h11.3c-.8 2.2-2.2 4.1-4 5.5l5.9 5C40.5 35 44 30 44 24c0-1.3-.1-2.7-.4-3.5Z"/></svg>
         </div>
-        <div class="reviews-score">
-          <span class="reviews-score-number">5,0</span>
-          <span class="reviews-score-stars">★★★★★</span>
-          <span class="reviews-score-label">689 avaliações no Google</span>
-          <a href="https://www.google.com/maps?cid=15705393177853079025" target="_blank" rel="noopener" class="link-underline">
-            Ver todas no Google →
-          </a>
+        <div class="review-summary-score">5,0</div>
+        <div class="review-summary-stars">★★★★★</div>
+        <div class="review-summary-text">
+          <strong>689 avaliações</strong>
+          <span>no Google</span>
         </div>
+        <a href="https://www.google.com/maps?cid=15705393177853079025" target="_blank" rel="noopener" class="btn btn-ghost review-summary-btn">
+          Ver todas no Google
+        </a>
       </div>
 
-      <div class="reviews-columns">
-        <blockquote class="review-quote">
-          <p>“Excelente advogado, contratei e ganhou a liminar do meu caso no mesmo dia. O cara é bom no que faz, advogado forte, recomendo de verdade.”</p>
-          <cite>Mateus Souza</cite>
-        </blockquote>
-        <blockquote class="review-quote">
-          <p>“Advogado extremamente competente e humano. Sempre disponível para orientar, explica tudo de forma clara e demonstra muito comprometimento com o cliente.”</p>
-          <cite>Rayanne Araujo Marques</cite>
-        </blockquote>
-        <blockquote class="review-quote">
-          <p>“Tive uma excelente experiência com o Dr. Jefferson Amorim. Muito esclarecedor. Recomendo para quem busca um advogado sério, ético e eficaz!”</p>
-          <cite>Wellika Tomaz</cite>
-        </blockquote>
-        <blockquote class="review-quote">
-          <p>“Advogado muito atencioso e eficiente! O que muitos advogados não estavam conseguindo resolver, ele conseguiu resolver em pouco tempo. Nota 10/10.”</p>
-          <cite>Luciana Ferreira</cite>
-        </blockquote>
-        <blockquote class="review-quote">
-          <p>“Conhecimento, honestidade e agilidade! Resolveu tudo em tempo recorde, daria 10 estrelas fácil.”</p>
-          <cite>Andreive Bernabé</cite>
-        </blockquote>
-        <blockquote class="review-quote">
-          <p>“Atendimento de excelência! Ética, profissionalismo e eficiência.”</p>
-          <cite>Juliana Santos</cite>
-        </blockquote>
+      <div class="reviews-slider" data-aos="fade-up" data-aos-delay="200">
+       <div class="reviews-viewport">
+        <div class="reviews-track" id="reviewsTrack">
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <p>"Excelente advogado, contratei e ganhou a liminar do meu caso no mesmo dia. O cara é bom no que faz, advogado forte, recomendo de verdade."</p>
+            <strong>Mateus Souza</strong>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <p>"Advogado extremamente competente e humano. Sempre disponível para orientar, explica tudo de forma clara e demonstra muito comprometimento com o cliente."</p>
+            <strong>Rayanne Araujo Marques</strong>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <p>"Tive uma excelente experiência com o Dr. Jefferson Amorim. Muito esclarecedor. Recomendo para quem busca um advogado sério, ético e eficaz!"</p>
+            <strong>Wellika Tomaz</strong>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <p>"Advogado muito atencioso e eficiente! O que muitos advogados não estavam conseguindo resolver, ele conseguiu resolver em pouco tempo. Nota 10/10."</p>
+            <strong>Luciana Ferreira</strong>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <p>"Conhecimento, honestidade e agilidade! Resolveu tudo em tempo recorde, daria 10 estrelas fácil."</p>
+            <strong>Andreive Bernabé</strong>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <p>"Atendimento de excelência! Ética, profissionalismo e eficiência."</p>
+            <strong>Juliana Santos</strong>
+          </div>
+        </div>
+       </div>
+
+        <div class="reviews-controls">
+          <button class="reviews-arrow" id="reviewsPrev" aria-label="Avaliação anterior">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="reviews-dots" id="reviewsDots"></div>
+          <button class="reviews-arrow" id="reviewsNext" aria-label="Próxima avaliação">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -304,14 +371,14 @@
   <section class="section section-dark" id="contato">
     <div class="container contact-grid">
       <div class="contact-text">
-        <p class="section-eyebrow">Fale conosco</p>
-        <h2>Vamos conversar sobre <br>o seu caso.</h2>
-        <p>
+        <p class="section-eyebrow" data-aos="fade-up">Fale conosco</p>
+        <h2 data-aos="fade-up" data-aos-delay="100">Vamos conversar sobre <br>o seu caso.</h2>
+        <p data-aos="fade-up" data-aos-delay="150">
           Atendimento presencial em Cariacica/ES (próximo ao Shopping Moxuara) ou pelo WhatsApp,
           com retorno rápido.
         </p>
 
-        <ul class="contact-list">
+        <ul class="contact-list" data-aos="fade-up" data-aos-delay="200">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
             <a href="tel:+5527998658243">(27) 99865-8243</a>
@@ -326,12 +393,12 @@
           </li>
         </ul>
 
-        <a href="https://wa.me/5527998658243?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+        <a href="https://wa.me/5527998658243?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="250">
           Iniciar conversa no WhatsApp
         </a>
       </div>
 
-      <div class="contact-map" data-aos="fade-up">
+      <div class="contact-map" data-aos="fade-up" data-aos-delay="150">
         <iframe
           title="Mapa - Cariacica, ES"
           src="https://www.google.com/maps?q=Shopping+Moxuara,+Cariacica,+ES&output=embed"
@@ -366,8 +433,14 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="container">
+    <div class="container footer-bottom-inner">
       <p>&copy; <span id="year"></span> Jefferson Amorim Advocacia. Todos os direitos reservados.</p>
+      <p class="footer-credit">
+        Desenvolvido por
+        <a href="https://www.instagram.com/ahttpe" target="_blank" rel="noopener">Ahttpe</a>
+        ·
+        <a href="https://www.linkedin.com/company/ahttpe-tecnologia/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
     </div>
   </div>
 </footer>

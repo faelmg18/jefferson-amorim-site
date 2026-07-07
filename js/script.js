@@ -44,6 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Cursor glow (desktop pointer only)
+  const glow = document.getElementById('cursorGlow');
+  if (window.matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', (e) => {
+      glow.style.opacity = '1';
+      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+    });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+  }
+
   // Animated counters
   const counters = document.querySelectorAll('.stat-number');
   const animateCounter = (el) => {
@@ -73,5 +83,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.6 });
 
   counters.forEach(c => counterObserver.observe(c));
+
+  // Reviews carousel
+  const track = document.getElementById('reviewsTrack');
+  const dotsWrap = document.getElementById('reviewsDots');
+  const prevBtn = document.getElementById('reviewsPrev');
+  const nextBtn = document.getElementById('reviewsNext');
+
+  if (track && dotsWrap && prevBtn && nextBtn) {
+    const slides = Array.from(track.children);
+    let index = 0;
+    let autoplay;
+
+    track.style.width = `${slides.length * 100}%`;
+    slides.forEach(s => { s.style.width = `${100 / slides.length}%`; });
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', `Ir para avaliação ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      const slideWidth = track.parentElement.clientWidth;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+      dots.forEach((d, di) => d.classList.toggle('is-active', di === index));
+    }
+
+    function restartAutoplay() {
+      clearInterval(autoplay);
+      autoplay = setInterval(() => goTo(index + 1), 6000);
+    }
+
+    prevBtn.addEventListener('click', () => { goTo(index - 1); restartAutoplay(); });
+    nextBtn.addEventListener('click', () => { goTo(index + 1); restartAutoplay(); });
+    window.addEventListener('resize', () => goTo(index));
+
+    const slider = track.closest('.reviews-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoplay));
+    slider.addEventListener('mouseleave', restartAutoplay);
+
+    restartAutoplay();
+  }
 
 });
