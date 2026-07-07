@@ -284,6 +284,26 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
 .area-card h3 { font-size: 1.15rem; margin-bottom: 10px; color: var(--white); }
 .area-card p { color: rgba(255,255,255,.6); font-size: .92rem; }
 
+/* ---------- Equipe ---------- */
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+.team-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 32px 24px; text-align: center;
+  box-shadow: 0 16px 34px -22px rgba(7,13,22,.25);
+}
+.team-photo, .team-avatar {
+  width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 18px;
+  object-fit: cover;
+}
+.team-avatar {
+  background: var(--navy-950); color: var(--gold-400);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700;
+}
+.team-card strong { display: block; font-size: 1.02rem; margin-bottom: 4px; }
+.team-card span { display: block; font-size: .8rem; color: var(--gold-500); font-weight: 600; margin-bottom: 12px; }
+.team-card p { font-size: .88rem; color: var(--ink-600); }
+
 /* ---------- Diferenciais ---------- */
 .grid-diff { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 10px; }
 .diff-item { text-align: left; }
@@ -420,6 +440,7 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
 @media (max-width: 1024px) {
   .grid-areas { grid-template-columns: repeat(2, 1fr); }
   .grid-diff { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
   .split, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .split-reverse { direction: ltr; }
   .split-media img { height: 420px; }
@@ -442,7 +463,7 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
 
 @media (max-width: 640px) {
   .section { padding: 80px 0; }
-  .grid-areas, .grid-diff { grid-template-columns: 1fr; }
+  .grid-areas, .grid-diff, .team-grid { grid-template-columns: 1fr; }
   .review-summary { flex-direction: column; align-items: flex-start; }
   .review-summary-btn { width: 100%; text-align: center; justify-content: center; }
   .review-item { padding: 36px 26px; }
