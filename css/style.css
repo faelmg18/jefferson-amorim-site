@@ -287,22 +287,23 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
 /* ---------- Equipe ---------- */
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
 .team-card {
-  background: var(--white); border-radius: var(--radius);
-  padding: 32px 24px; text-align: center;
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
   box-shadow: 0 16px 34px -22px rgba(7,13,22,.25);
 }
-.team-photo, .team-avatar {
-  width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 18px;
-  object-fit: cover;
+.team-photo {
+  width: 100%; height: 340px; object-fit: cover; display: block;
 }
-.team-avatar {
+.team-placeholder {
   background: var(--navy-950); color: var(--gold-400);
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700;
+  font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700;
 }
-.team-card strong { display: block; font-size: 1.02rem; margin-bottom: 4px; }
-.team-card span { display: block; font-size: .8rem; color: var(--gold-500); font-weight: 600; margin-bottom: 12px; }
-.team-card p { font-size: .88rem; color: var(--ink-600); }
+.team-info {
+  padding: 20px 22px; border-top: 3px solid var(--gold-500);
+}
+.team-info strong { display: block; font-size: 1.02rem; margin-bottom: 4px; }
+.team-info span { display: block; font-size: .76rem; color: var(--gold-500); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
+.team-info p { font-size: .88rem; color: var(--ink-600); }
 
 /* ---------- Diferenciais ---------- */
 .grid-diff { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 10px; }
