@@ -293,6 +293,19 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
 .team-photo {
   width: 100%; height: 340px; object-fit: cover; display: block;
 }
+
+.team-photo-flip { width: 100%; height: 340px; perspective: 1200px; }
+.team-photo-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform .7s cubic-bezier(.4,.2,.2,1);
+  transform-style: preserve-3d;
+}
+.team-photo-flip:hover .team-photo-inner { transform: rotateY(180deg); }
+.team-photo-inner .team-photo {
+  position: absolute; inset: 0; height: 100%;
+  backface-visibility: hidden;
+}
+.team-photo-back { transform: rotateY(180deg); }
 .team-placeholder {
   background: var(--navy-950); color: var(--gold-400);
   display: flex; align-items: center; justify-content: center;
