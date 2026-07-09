@@ -36,9 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Back to top
+  // Back to top (scroll animado com easing, mais suave que o "smooth" nativo)
+  const smoothScrollTo = (targetY, duration = 900) => {
+    const startY = window.scrollY;
+    const diff = targetY - startY;
+    const start = performance.now();
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    // Evita que o "scroll-behavior: smooth" do CSS brigue com o scroll manual por frame
+    const root = document.documentElement;
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      window.scrollTo(0, startY + diff * easeOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(step);
+      else root.style.scrollBehavior = previousBehavior;
+    };
+    requestAnimationFrame(step);
+  };
+
   document.getElementById('toTop').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    smoothScrollTo(0);
   });
 
   // Footer year
